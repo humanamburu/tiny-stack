@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "tiny-stack",
+      "devDependencies": {
+        "typescript": "^6.0.3",
+      },
     },
     "api": {
       "name": "api",
