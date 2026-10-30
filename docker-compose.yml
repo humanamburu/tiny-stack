@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:17
+    ports:
+      - '127.0.0.1:5434:5432'
+    environment:
+      # Local dev database: no password, reachable from localhost only
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_DB: app
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

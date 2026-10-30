@@ -1,0 +1,15 @@
+{
+  "name": "tiny-stack",
+  "private": true,
+  "type": "module",
+  "workspaces": ["api", "web"],
+  "scripts": {
+    "dev": "bun run --filter '*' dev",
+    "db:up": "docker compose up -d",
+    "db:push": "bun run --filter api db:push",
+    "db:studio": "bun run --filter api db:studio"
+  },
+  "bun-create": {
+    "start": "bun db:up && bun db:push && bun dev"
+  }
+}
