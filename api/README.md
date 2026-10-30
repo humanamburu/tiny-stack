@@ -10,7 +10,7 @@ bun run db:push      # sync DB tables with src/schema.ts (no migration files)
 bun run db:studio    # browse data at https://local.drizzle.studio
 ```
 
-Connects to the docker-compose Postgres (`postgres://postgres@localhost:5434/app`) by default.
+Connects to the docker-compose Postgres (`postgres://postgres@localhost:54329/app`) by default.
 Point it elsewhere with `DATABASE_URL` in `api/.env`.
 
 ## Adding an entity

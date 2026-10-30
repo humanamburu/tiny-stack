@@ -6,9 +6,9 @@ One example resource (`users`: list + create), no styling, no auth, nothing to d
 ```bash
 bun create humanamburu/tiny-stack my-app
 cd my-app
-bun db:up       # Postgres 17 in Docker on localhost:5434
-bun db:push     # create tables from api/src/schema.ts
-bun dev         # api on :3000, web on :3001
+docker compose up -d --wait   # Postgres 17 on localhost:54329
+bun db:push                   # create tables from api/src/schema.ts
+bun dev                       # api on :3000, web on :3001
 ```
 
 Needs [Bun](https://bun.com) ≥ 1.3 and Docker.
@@ -29,6 +29,16 @@ docker-compose.yml   local Postgres
 | Script | What |
 |---|---|
 | `bun dev` | Run api and web in watch mode |
-| `bun db:up` | Start Postgres (`docker compose down` to stop) |
 | `bun db:push` | Sync tables with `api/src/schema.ts` |
 | `bun db:studio` | Browse data in Drizzle Studio |
+
+## Database
+
+Local Postgres 17 via Docker: `localhost:54329`, database `app`, user `postgres`, no password.
+Data is kept in a Docker volume between restarts.
+
+```bash
+docker compose up -d --wait   # start (waits until it accepts connections)
+docker compose stop           # stop, keep data
+docker compose down -v        # remove container and data
+```

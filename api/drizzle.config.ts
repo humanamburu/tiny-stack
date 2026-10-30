@@ -3,5 +3,5 @@ import { defineConfig } from 'drizzle-kit'
 export default defineConfig({
   dialect: 'postgresql',
   schema: './src/schema.ts',
-  dbCredentials: { url: process.env.DATABASE_URL ?? 'postgres://postgres@localhost:5434/app' },
+  dbCredentials: { url: process.env.DATABASE_URL ?? 'postgres://postgres@localhost:54329/app' },
 })

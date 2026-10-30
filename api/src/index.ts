@@ -3,7 +3,7 @@ import { Hono } from 'hono'
 import { logger } from 'hono/logger'
 import { usersTable } from './schema'
 
-const db = drizzle(process.env.DATABASE_URL ?? 'postgres://postgres@localhost:5434/app')
+const db = drizzle(process.env.DATABASE_URL ?? 'postgres://postgres@localhost:54329/app')
 
 const app = new Hono()
 
