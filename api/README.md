@@ -5,13 +5,14 @@ Hono on Bun + Drizzle + Postgres. Routes live in `src/index.ts`, tables in `src/
 ## Run
 
 ```bash
-bun dev              # http://localhost:3000, restarts on save
-bun run db:push      # sync DB tables with src/schema.ts (no migration files)
-bun run db:studio    # browse data at https://local.drizzle.studio
+docker compose up -d --wait   # start Postgres first (from the repo root)
+bun run db:push               # sync DB tables with src/schema.ts (no migration files)
+bun dev                       # http://localhost:3000, restarts on save
+bun run db:studio             # browse data at https://local.drizzle.studio
 ```
 
 Connects to the docker-compose Postgres (`postgres://postgres@localhost:54329/app`) by default.
-Point it elsewhere with `DATABASE_URL` in `api/.env`.
+Point it elsewhere with `DATABASE_URL` in `api/.env`. Stop/reset commands: see the root README.
 
 ## Adding an entity
 
