@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent } from 'react'
 
 import type { User } from '../../api/src/schema'
+import styles from './App.module.css'
 
 export function App() {
   const [users, setUsers] = useState<User[]>([])
@@ -30,8 +31,8 @@ export function App() {
   }
 
   return (
-    <main>
-      <form onSubmit={onSubmit}>
+    <main className={styles.app}>
+      <form onSubmit={onSubmit} className={styles.form}>
         <input name="name" placeholder="name" required />
         <button type="submit">Add user</button>
       </form>

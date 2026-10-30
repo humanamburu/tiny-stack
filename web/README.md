@@ -17,3 +17,11 @@ Import row types straight from the API's Drizzle schema. It's a type-only import
 ```ts
 import type { User } from '../../api/src/schema'
 ```
+
+## Styles
+
+Plain CSS, no setup ([Vite CSS docs](https://vite.dev/guide/features#css)):
+
+- **Global**: `import './index.css'` in `main.tsx` applies everywhere.
+- **Scoped**: any `*.module.css` is a CSS module. `import styles from './App.module.css'`, then `className={styles.app}`.
+  Class names are hashed per file, so they never clash. `src/vite-env.d.ts` gives the import its types.
