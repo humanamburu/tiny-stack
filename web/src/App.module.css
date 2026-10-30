@@ -1,4 +1,3 @@
-/* Scoped styles: CSS module, classes are imported as `styles.x` */
 .app {
   max-width: 480px;
   margin: 2rem auto;

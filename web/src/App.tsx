@@ -17,7 +17,7 @@ export function App() {
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    const formEl = e.currentTarget // grab before await: React nulls currentTarget afterwards
+    const formEl = e.currentTarget
     const form = new FormData(formEl)
 
     await fetch('/api/users', {
